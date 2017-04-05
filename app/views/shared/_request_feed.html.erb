@@ -1,0 +1,6 @@
+<% if @requests.any? %>
+  <div class="microposts">
+    <%= render @requests %>
+  </div>
+  <%= will_paginate @requests %>
+<% end %>

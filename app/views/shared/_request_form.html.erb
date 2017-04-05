@@ -1,0 +1,10 @@
+<%= form_for(@newRequest) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message, placeholder: "Share about past experience or why you're interested!" %>
+    
+    <%= f.hidden_field :post_id %>
+  </div>
+  <%= f.submit "Apply", class: "btn btn-primary" %>
+<% end %>

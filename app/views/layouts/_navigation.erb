@@ -1,0 +1,43 @@
+<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+           <ul>
+                <li>
+                    <%= link_to current_user do %>
+                        <i class="fa fa-user fa-fw" aria-hidden="true"></i>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to edit_user_path(current_user) do %>
+                        <i class="fa fa-cog fa-fw" aria-hidden="true"></i>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to current_user do %>
+                        <i class="fa fa-question-circle fa-fw" aria-hidden="true"></i>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to logout_path, method: "delete" do %>
+                        <i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>
+                    <% end %>
+                </li>
+            </ul>
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+           </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-left">
+                <li><%= link_to "Home", root_path %>
+                </li>
+                <li><%= link_to "Search Opportunities", search_path %>
+                </li>
+                <li><%= link_to "My Commitments", mycommitments_path %>
+            </ul>
+        </div>
+    </div>
+</div>

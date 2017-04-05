@@ -1,0 +1,6 @@
+<%= render 'shared/search_form' %>
+<% if @feed_items.blank? %>
+    <h4>There are no posts containing the term <%= params[:search] %>.</h4>
+<% else %>
+    <%= render 'shared/feed' %>
+<% end %>

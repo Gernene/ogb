@@ -1,0 +1,18 @@
+<% provide(:title, @user.name) %>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1><br>
+  <%= @user.user_group.name %><br><br>
+  Email: <%= @user.email %><br>
+  Phone Number: <%= @user.phone %><br>
+  Website: <%= @user.website %><br><%= @user.user_group.edit_users %>
+  <div class="col-md-8">
+    <% if @user.posts.any? %>
+      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <ol class="posts">
+        <%= render @posts %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>

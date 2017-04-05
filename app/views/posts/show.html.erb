@@ -1,0 +1,40 @@
+<div class="col-md-6">
+  <div class="infoBox">
+    <div>
+      <%= gravatar_for @post.user %>
+      Organization: <%= link_to @post.user.name, @post.user %><br>
+      Website: <%= link_to @post.user.website, @post.user.website %><br>
+      Email: <%= @post.user.email %><br>
+      Phone: <%= @post.user.phone %>
+    </div>
+    <div>
+      <h3 class="softYellow caveatBrush"><%= @post.title %></h3>
+      <h5 class="brightBlue"><b>Description:</b></h5>
+      <%= @post.description %><br><br>
+      <h5 class="brightBlue"><b>Event Date(s) / Scheduling:</b></h5>
+      Dummy text dummy text dummy text<br><br>
+      <h5 class="brightBlue"><b>Location:</b></h5>
+      Dummy text dummy text dummy text
+    </div>
+    <br>
+    <% if current_user?(@post.user) %>
+      <div class="text-right">
+        <%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure?" }, 
+          class: "btn btn-primary btn-sm" %>
+      </div>
+    <% end %>
+    </div>
+</div>
+
+<div class="col-md-6">
+  <% if current_user?(@post.user) %>
+    <%= render 'shared/request_feed' %>
+  <% else %>
+    <br><br>
+    <h2 class="brightBlue caveatBrush">I'd Like to Help!</h2>
+    Submit to send this organization your application and contact details. 
+    You will receive a notification by email once your help has been accepted!
+    <br><br> 
+    <%= render 'shared/request_form' %>
+  <% end %>
+</div>
