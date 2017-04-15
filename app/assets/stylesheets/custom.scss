@@ -5,14 +5,18 @@
 $navy: rgba(15, 49, 69, 1);
 $navyHighlight: rgba(18, 58, 82, 1);
 $storm: rgba(86, 74, 89, 1);
+$stormHighlight: rgba(99, 85, 102, 1);
 $teal: rgba(124, 217, 180, 1);
 $tealHighlight: rgba(141, 247, 205, 1);
 $tealShadow: rgba(108, 189, 157, 1);
 $sunshine: rgba(235, 233, 182, 1);
+$sunshineHighlight: rgba(247, 245, 192, 1);
 $white: #fff;
 $tangerine: rgba(255, 161, 105, 1);
 $tangerineHighlight: rgba(255, 172, 105, 1);
 $chocolate: rgba(46, 29, 19, 1);
+$fog: rgba(69, 68, 53, 1);
+$night: rgba(22, 19, 23, 1);
 $gray-medium-light: #eaeaea;
 
 
@@ -299,6 +303,17 @@ p {
   font-size: 1em;
 }
 
+.btn-square {
+  width: 150px;
+  height: 150px;
+  margin: 0 5px 10px 0;
+  
+  .fa { 
+    font-size: 50px; 
+    line-height: 100px;
+  }
+}
+
 .btn-primary {
   font-weight: bold;
   color: $navy;
@@ -331,5 +346,37 @@ p {
   &:active {
     color: $chocolate;
     background: $tangerineHighlight;
+  }
+}
+
+.btn-tertiary {
+  font-weight: bold;
+  color: $fog;
+  background: $sunshine;
+  
+  &:hover {
+    color: $fog;
+    background: $sunshineHighlight;
+  }
+  
+  &:active {
+    color: $fog;
+    background: $sunshineHighlight;
+  }
+}
+
+.btn-quaternary {
+  font-weight: bold;
+  color: $night;
+  background: $storm;
+  
+  &:hover {
+    background: $stormHighlight;
+    color: $night;
+  }
+  
+  &:active {
+    background: $stormHighlight;
+    color: $night;
   }
 }
