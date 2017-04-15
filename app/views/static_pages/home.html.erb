@@ -1,23 +1,65 @@
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <div class="infoBox">
-          <%= render 'shared/user_info' %>
-        </div>
-      </section>
-      <section class="post_form">
-        <h3>New Post</h3>
-        <br>
-        <%= render 'shared/post_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>Post Feed</h3>
-      <br>
-      <%= render 'shared/feed' %>
+  <% if current_user.account_type == "volunteer" %>
+    <div class="col-md-6 col-md-offset-1">
+      <h1>Welcome Back!</h1>
+      Shank tri-tip rump, velit id commodo boudin eu sunt dolore venison sint ea. 
+      Bresaola ad nulla venison, fatback pork et brisket shankle pig mollit in dolor. 
+      In pork velit esse shank in nisi. Pork ground round prosciutto occaecat strip steak pork chop beef ribs biltong. 
+      Et spare ribs dolore minim short loin alcatra.
     </div>
-  </div>
+    <div class="col-md-4 text-center">
+      <%= link_to search_path, class: "btn btn-square btn-secondary" do %>
+        Search
+        <br>
+        <i class="fa fa-search"></i>
+      <% end %>
+      <%= link_to mycommitments_path, class: "btn btn-square btn-primary" do %>
+        My Requests
+        <br>
+        <i class="fa fa-pencil-square-o"></i>
+      <% end %>
+      <%= link_to current_user, class: "btn btn-square btn-quaternary" do %>
+        My Profile
+        <br>
+        <i class="fa fa-id-card-o"></i>
+      <% end %>
+      <%= link_to search_path, class: "btn btn-square btn-tertiary" do %>
+        Resources
+        <br>
+        <i class="fa fa-question-circle"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="col-md-6 col-md-offset-1">
+      <h1>Welcome Back!</h1>
+      Shank tri-tip rump, velit id commodo boudin eu sunt dolore venison sint ea. 
+      Bresaola ad nulla venison, fatback pork et brisket shankle pig mollit in dolor. 
+      In pork velit esse shank in nisi. Pork ground round prosciutto occaecat strip steak pork chop beef ribs biltong. 
+      Et spare ribs dolore minim short loin alcatra.
+    </div>
+    <div class="col-md-4 text-center">
+      <%= link_to newpost_path, class: "btn btn-square btn-secondary" do %>
+        New Post
+        <br>
+        <i class="fa fa-plus-circle"></i>
+      <% end %>
+      <%= link_to myposts_path, class: "btn btn-square btn-primary" do %>
+        My Posts
+        <br>
+        <i class="fa fa-pencil-square-o"></i>
+      <% end %>
+      <%= link_to search_path, class: "btn btn-square btn-quaternary" do %>
+        Search
+        <br>
+        <i class="fa fa-search"></i>
+      <% end %>
+      <%= link_to current_user, class: "btn btn-square btn-tertiary" do %>
+        My Profile
+        <br>
+        <i class="fa fa-id-card-o"></i>
+      <% end %>
+    </div>
+  <% end %>
 <% else %>
   <h1>Welcome!</h1>
   <%= link_to "Sign Up!", signup_path, class: "btn btn-lg btn-secondary" %>
