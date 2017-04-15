@@ -41,6 +41,10 @@ class PostsController < ApplicationController
       @feed_items = @feed_items.paginate(page: params[:page])
     end
   end
+  
+  def myposts
+    @feed_items = Post.all.where("user_id == ?", current_user.id).paginate(page: params[:page])
+  end
 
   private
 

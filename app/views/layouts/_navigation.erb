@@ -40,7 +40,12 @@
            <ul class="nav navbar-nav">
               <li class="active"><%= link_to "Home", root_path %></li>
               <li><%= link_to "Search Opportunities", search_path %></li>
-              <li><%= link_to "My Commitments", mycommitments_path %></li>
+              <% if current_user.account_type == "volunteer" %>
+                  <li><%= link_to "My Commitments", mycommitments_path %></li>
+              <% else %>
+                  <li><%= link_to "New Post", newpost_path %></li>
+                  <li><%= link_to "My Posts", myposts_path %></li>
+              <% end %>
            </ul>
         </div>
         <!--/.nav-collapse -->
