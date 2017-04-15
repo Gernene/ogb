@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy, :show]
-  before_action :authenticate_user,   only: :destroy
+  before_action :logged_in_user, only: [:new, :create, :destroy, :show, :myposts]
+  before_action :authenticate_post_author,   only: :destroy
+  before_action :authenticate_organization, only: [:new, :create, :myposts]
 
   def show
     @post = Post.find(params[:id])
@@ -52,10 +53,17 @@ class PostsController < ApplicationController
       params.require(:post).permit(:description, :title)
     end
     
-    def authenticate_user
+    def authenticate_post_author
       @currentUserPost = current_user.posts.find_by(id: params[:id])
       @privilegeCheck = current_user.user_group.edit_posts?
       if @currentUserPost.nil? && @privilegeCheck == false
+        redirect_to(root_url)
+      end
+    end
+    
+    def authenticate_organization
+      @privilegeCheck = current_user.user_group.edit_posts?
+      if current_user.account_type != "organization" && @privilegeCheck == false
         redirect_to(root_url)
       end
     end
