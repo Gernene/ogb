@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get    '/myposts',  to: 'posts#myposts'
   get    '/newpost',  to: 'posts#new'
   post   '/newpost',  to: 'posts#create'
-  get '/mycommitments', to: 'requests#commitments'
+  get '/mycommitments', to: 'requests#mycommitments'
   
   resources :users
   resources :account_activations, only: [:edit]
