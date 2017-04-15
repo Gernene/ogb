@@ -4,6 +4,7 @@
 /* mixins, variables, etc. */
 $navy: rgba(15, 49, 69, 1);
 $navyHighlight: rgba(18, 58, 82, 1);
+$storm: rgba(86, 74, 89, 1);
 $teal: rgba(124, 217, 180, 1);
 $tealHighlight: rgba(141, 247, 205, 1);
 $tealShadow: rgba(108, 189, 157, 1);
@@ -249,6 +250,7 @@ nav {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  color: $sunshine;
 }
 
 h1 {
@@ -278,13 +280,13 @@ p {
   background: $navyHighlight;
   border-radius: 0.5em;
   padding: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 1.5em;
 }
 
 .divided {
   border-bottom: 2px solid $navyHighlight;
   padding-bottom: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 3em;
 }
 
 

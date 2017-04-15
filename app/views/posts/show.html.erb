@@ -32,6 +32,13 @@
 
 <div class="col-md-6">
   <% if current_user?(@post.user) %>
+    <%= render 'shared/request_feed' %>
+  <% else %>
+    <br><br>
+    <h2 class="teal caveatBrush">I'd Like to Help!</h2>
+    Submit to send this organization your application and contact details. 
+    You will receive a notification by email once your help has been accepted!
+    <br><br> 
     <%= render 'shared/request_form' %>
   <% end %>
 </div>

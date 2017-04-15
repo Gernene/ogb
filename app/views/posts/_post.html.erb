@@ -1,12 +1,20 @@
-<div id="post-<%= post.id %>" class="divided">
-  <%= link_to gravatar_for(post.user, size: 50), post.user %>
-  <span class="user"><%= link_to post.user.name, post.user %></span>
-  <span class="content"><%= post.description.truncate_words(20) %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-    <% if current_user?(post.user) %>
-      <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-sm" %>
-    <% end %>
-  </span>
+<div id="post-<%= post.id %>" class="col-md-12 divided">
+  <div class="col-md-2 infoBox">
+    <div><%= link_to gravatar_for(post.user, size: 80), post.user %></div>
+    <br><br><br><br><br>
+    <%= link_to post.user.name, post.user %>
+  </div>
+  <div class="col-md-10">
+    <h3 class="tangerine caveatBrush"><%= post.title %></h3>
+    <span class="content"><%= post.description.truncate_words(20) %></span>
+    <br><br>
+    <i>- Posted <%= time_ago_in_words(post.created_at) %> ago</i>
+      <br><br>
+      <div class="text-right">
+        <%= link_to "See More", post, class: "btn btn-secondary btn-sm" %>
+        <% if current_user?(post.user) %>
+          <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary btn-sm" %>
+        <% end %>
+    </div>
+  </div>
 </div>
-<br><br>

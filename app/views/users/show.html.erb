@@ -1,18 +1,32 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1><br>
-  <%= @user.user_group.name %><br><br>
-  Email: <%= @user.email %><br>
-  Phone Number: <%= @user.phone %><br>
-  Website: <%= @user.website %><br>
-  <div class="col-md-8">
+<div class="col-md-10 col-md-offset-1">
+  <h1><%= @user.name %></h1>
+  <br>
+  <div class="col-md-6 infoBox">
+    <div class="col-md-4">
+      <%= gravatar_for @user %>
+      <br><br><br>
+      <h3 class="tangerine caveatBrush"><%= @user.name %></h3>
+      <span class="teal"><%= @user.user_group.name %></span>
+    </div>
+    <div class="col-md-8">
+    Email: <%= @user.email %><br><br>
+    Phone Number: <%= @user.phone %><br><br>
+    Website: <%= @user.website %><br><br>
+    </div>
+  </div>
+  <div class="col-md-6">
+    Spicy jalapeno bacon ipsum dolor amet strip steak cupidatat in consectetur. 
+    Rump commodo filet mignon, minim nostrud sausage tenderloin enim andouille 
+    cupim tri-tip beef pork loin t-bone.
+  </div>
+  <div class="col-md-12">
     <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
+      <h3>Current Opportunities (<%= @user.posts.count %>)</h3>
+      <br>
       <div class="posts">
         <%= render @posts %>
       </div>
       <%= will_paginate @posts %>
-    <% end %>
-  </div>
+    <% end %></div>
+</div>

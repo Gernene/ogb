@@ -1,12 +1,12 @@
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-10 col-md-offset-1">
 <h1>Pending Requests</h1>
+<br>
 <% if @pendingCommitments.any? %>
   <div class="microposts">
     <%= render @pendingCommitments %>
   </div>
   <%= will_paginate @pendingCommitments %>
 <% else %>
-  <br>
   <div class="center">Nothing here yet!</div>
 <% end %>
 </div>
