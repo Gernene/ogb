@@ -6,13 +6,13 @@
   <%= @user.user_group.name %><br><br>
   Email: <%= @user.email %><br>
   Phone Number: <%= @user.phone %><br>
-  Website: <%= @user.website %><br><%= @user.user_group.edit_users %>
+  Website: <%= @user.website %><br>
   <div class="col-md-8">
     <% if @user.posts.any? %>
       <h3>Posts (<%= @user.posts.count %>)</h3>
-      <ol class="posts">
+      <div class="posts">
         <%= render @posts %>
-      </ol>
+      </div>
       <%= will_paginate @posts %>
     <% end %>
   </div>

@@ -11,6 +11,7 @@ class Post < ApplicationRecord
         Request.where("post_id = ?", id)
     end
     
+    
     def self.search(search)
         where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%") 
     end

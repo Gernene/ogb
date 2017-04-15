@@ -2,32 +2,48 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
-$midnightBlue: rgba(20, 46, 68, 1);
-$midnightBlueHighlight: rgba(32, 64, 91, 1);
-$skyBlue: #8abbca;
-$skyBlueHighlight: #61abdd;
+$navy: rgba(15, 49, 69, 1);
+$navyHighlight: rgba(18, 58, 82, 1);
+$teal: rgba(124, 217, 180, 1);
+$tealHighlight: rgba(141, 247, 205, 1);
+$tealShadow: rgba(108, 189, 157, 1);
+$sunshine: rgba(235, 233, 182, 1);
 $white: #fff;
-$brightBlue: #74c5fc;
-$brightBlueShadow: #569ece;
-$softYellow: #ffe69b;
+$tangerine: rgba(255, 161, 105, 1);
+$tangerineHighlight: rgba(255, 172, 105, 1);
+$chocolate: rgba(46, 29, 19, 1);
 $gray-medium-light: #eaeaea;
+
+
 
 /* universal */
 
 html {
     margin: 0;
     padding: 0;
-    background-color: $midnightBlue;
-    color: $skyBlue;
+    background-color: $navy;
+    color: $white;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: $midnightBlue;
+    background-color: $navy;
     color: $white;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
+    
+    a {
+      color: $teal;
+    }
+    
+    a:hover {
+      color: $tealHighlight;
+    }
+}
+
+.content {
+    padding: 4em 0 0 0;
 }
 
 section {
@@ -68,12 +84,12 @@ textarea {
 footer {
   margin-top: 45px;
   padding: 1em;
-  border-top: 1px solid $midnightBlueHighlight;
-  color: $skyBlue;
+  border-top: 1px solid $navyHighlight;
+  color: $white;
   a {
-    color: $brightBlue;
+    color: $teal;
     &:hover {
-      color: $skyBlue;
+      color: $teal;
     }
   }
   small {
@@ -133,7 +149,7 @@ input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
-  color: $midnightBlue;
+  color: $navy;
 }
 
 input {
@@ -161,84 +177,75 @@ textarea {
 }
 
 #banner {
-    height: 220px;
+    margin: 0;
+    height: 280px;
     height: 16em;
-    background: $skyBlue;
+    background: url(image_path('OGBTestBanner.png')) #96B5FF;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }
 
 
 /* Navigation Bar */
 
-#custom-bootstrap-menu.navbar-default .navbar-header {
-    float: right;
+nav {
+  margin-bottom: 0!important;
+}
+
+.custom-navbar .fa {font-size: 30px}
+
+.navbar-fixed-top {
+    min-height: 80px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 80px;
+    font-size: 18px;
     
-    li {
-        list-style: none;
-        display: inline-block;
-        height: 70px;
-        line-height: 70px;
-        font-size: 2.5em;
-        color: $softYellow;
-        
-        a {
-            color: $softYellow;
-            background: none;
-            text-decoration: none;
-        }
-        
-        a:hover { color: $skyBlue; }
+    &:hover {
+      background: $navyHighlight;
     }
 }
 
-#custom-bootstrap-menu.navbar-default {
-    background-color: rgba(20, 46, 68, 1);
-    border: 0;
-    height: 50px;
-}
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
-    color: rgba(116, 197, 252, 1);
-    background-color: rgba(20, 46, 68, 1);
-    font-size: 20px;
-    height: 70px;
-    line-height: 35px;
-}
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
-#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
-    color: rgba(138, 187, 202, 1);
-    background-color: rgba(32, 64, 91, 1);
-}
-#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
-#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
-#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
-    color: rgba(116, 197, 252, 1);
-    background-color: rgba(20, 46, 68, 1);
-}
-#custom-bootstrap-menu.navbar-default .navbar-toggle {
-    border-color: #142e44;
-}
-#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
-#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
-    background-color: #142e44;
-}
-#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
-    background-color: #142e44;
-}
-#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
-#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
-    background-color: #142e44;
+.navbar-header {
+    margin-top: 10px;
 }
 
-.container {
-    padding: 3% 0 0 0;
+@media (max-width:767px) { 
+    .custom-navbar .navbar-right {
+        float: right;
+        padding-right: 15px;
+    }
+    .custom-navbar .nav.navbar-nav.navbar-right li {
+        float: right;
+    }
+    .custom-navbar .nav.navbar-nav.navbar-right li > a {
+        line-height: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .custom-navbar .navbar-toggle {
+        float: left
+    }
+    .custom-navbar .navbar-header {
+        float: left;
+        width: auto!important;
+    }
+    .custom-navbar .navbar-collapse {
+        clear: both;
+        float: none;
+    }
 }
 
 
 /* Typography */
 .caveatBrush { font-family: 'Caveat Brush', cursive; }
 
-.softYellow { color: $softYellow; }
+.tangerine { color: $tangerine; }
 
-.brightBlue { color: $brightBlue; }
+.teal { color: $teal; }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -268,14 +275,14 @@ p {
 
 /* Deco */
 .infoBox {
-  background: $midnightBlueHighlight;
+  background: $navyHighlight;
   border-radius: 0.5em;
   padding: 1em;
   margin-bottom: 3em;
 }
 
 .divided {
-  border-bottom: 2px solid $midnightBlueHighlight;
+  border-bottom: 2px solid $navyHighlight;
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
@@ -292,35 +299,35 @@ p {
 
 .btn-primary {
   font-weight: bold;
-  color: $midnightBlue;
-  background: $brightBlue;
-  border: 1px solid $brightBlueShadow;
+  color: $navy;
+  background: $teal;
+  border: 1px solid $tealShadow;
   
   &:hover {
-    color: $midnightBlue;
-    background: #61abdd;
-    border: 1px solid $brightBlueShadow;
+    color: $navy;
+    background: $tealHighlight;
+    border: 1px solid $teal;
   }
   
   &:focus {
-    color: $midnightBlue !important;
-    background: #61abdd !important;
-    border: 1px solid $brightBlueShadow !important;
+    color: $navy !important;
+    background: $tealHighlight !important;
+    border: 1px solid $teal !important;
   }
 }
 
 .btn-secondary {
   font-weight: bold;
-  color: #633713;
-  background: $softYellow;
+  color: $chocolate;
+  background: $tangerine;
   
   &:hover {
-    color: #331802;
-    background: #fcce74;
+    color: $chocolate;
+    background: $tangerineHighlight;
   }
   
   &:active {
-    color: #331802;
-    background: #fcce74;
+    color: $chocolate;
+    background: $tangerineHighlight;
   }
 }

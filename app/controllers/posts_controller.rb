@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @newRequest  = current_user.requests.build
     @newRequest.post_id = @post.id
     @requests = @post.feed.where("status != ?", "accepted").paginate(page: params[:page])
+    @acceptedrequests = @post.feed.where("status == ?", "accepted")
   end
   
   def new
@@ -26,6 +27,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
     flash[:success] = "Post deleted"
     redirect_to request.referrer || root_url

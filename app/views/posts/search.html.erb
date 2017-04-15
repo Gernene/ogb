@@ -1,6 +1,9 @@
-<%= render 'shared/search_form' %>
-<% if @feed_items.blank? %>
-    <h4>There are no posts containing the term <%= params[:search] %>.</h4>
-<% else %>
-    <%= render 'shared/feed' %>
-<% end %>
+<div class="col-md-8 col-md-offset-2">
+    <%= render 'shared/search_form' %>
+    <br><br><br>
+    <% if @feed_items.blank? %>
+        <h4>There are no posts containing the term <%= params[:search] %>.</h4>
+    <% else %>
+        <%= render 'shared/feed' %>
+    <% end %>
+</div>

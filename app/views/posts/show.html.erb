@@ -8,13 +8,17 @@
       Phone: <%= @post.user.phone %>
     </div>
     <div>
-      <h3 class="softYellow caveatBrush"><%= @post.title %></h3>
-      <h5 class="brightBlue"><b>Description:</b></h5>
+      <h3 class="tangerine caveatBrush"><%= @post.title %></h3>
+      <h5 class="teal"><b>Description:</b></h5>
       <%= @post.description %><br><br>
-      <h5 class="brightBlue"><b>Event Date(s) / Scheduling:</b></h5>
+      <h5 class="teal"><b>Event Date(s) / Scheduling:</b></h5>
       Dummy text dummy text dummy text<br><br>
-      <h5 class="brightBlue"><b>Location:</b></h5>
-      Dummy text dummy text dummy text
+      <h5 class="teal"><b>Location:</b></h5>
+      Dummy text dummy text dummy text<br><br>
+      <h5 class="teal"><b>Volunteers:</b></h5>
+      <% @acceptedrequests.each do |request| %>
+        <%= link_to request.user.name, request.user %><br>
+      <% end %>
     </div>
     <br>
     <% if current_user?(@post.user) %>
@@ -28,13 +32,6 @@
 
 <div class="col-md-6">
   <% if current_user?(@post.user) %>
-    <%= render 'shared/request_feed' %>
-  <% else %>
-    <br><br>
-    <h2 class="brightBlue caveatBrush">I'd Like to Help!</h2>
-    Submit to send this organization your application and contact details. 
-    You will receive a notification by email once your help has been accepted!
-    <br><br> 
     <%= render 'shared/request_form' %>
   <% end %>
 </div>

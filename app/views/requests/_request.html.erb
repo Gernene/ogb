@@ -7,10 +7,14 @@
   <br><br>
   <%= request.message %><br><br>
   <i>- Sent <%= time_ago_in_words(request.created_at) %> ago</i><br><br>
-  <% if current_user?(request.user) %>
-    <div class="text-right">
-      <%= link_to "Accept", request, method: :put, data: { confirm: "You sure?" }, class: "btn btn-secondary btn-sm" %>
-      <%= link_to "Decline", request,  method: :delete, data: { confirm: "You sure?" }, class: "btn btn-primary btn-sm" %>
-    </div>
-  <% end %>
+  <div class="text-right">
+    <% if request.status != "accepted" %>
+        <% if current_user?(request.post.user) %>
+          <%= link_to "Accept", request, method: :put, data: { confirm: "You sure?" }, class: "btn btn-secondary btn-sm" %>
+          <%= link_to "Decline", request,  method: :delete, data: { confirm: "You sure?" }, class: "btn btn-primary btn-sm" %>
+        <% elsif current_user?(request.user) %>
+          <%= link_to "Cancel", request,  method: :delete, data: { confirm: "You sure?" }, class: "btn btn-primary btn-sm" %>
+        <% end %>
+    <% end %>
+  </div>
 </div>

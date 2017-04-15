@@ -17,6 +17,7 @@ class RequestsController < ApplicationController
     @request = current_user.requests.build(request_params)
     if @request.save
       flash[:success] = "request created!"
+      redirect_to @request.post
     else
       redirect_to root_url
     end
@@ -31,13 +32,14 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find(params[:id])
     @request.status = "accepted"
+    @request.save
     flash[:success] = "request accepted"
     redirect_to request.referrer || root_url
   end
   
   def commitments
-    @pendingCommitments = current_user.requests.where("status == ?", "pending")
-    @acceptedCommitments = current_user.requests.where("status == ?", "accepted")
+    @pendingCommitments = current_user.request_feed.where("status == ?", "pending").paginate(page: params[:page])
+    @acceptedCommitments = current_user.request_feed.where("status == ?", "accepted").paginate(page: params[:page])
   end
 
   private

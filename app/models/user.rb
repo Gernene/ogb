@@ -73,6 +73,10 @@ class User < ApplicationRecord
     Post.where("user_id = ?", id)
   end
   
+  def request_feed
+    Request.where("user_id = ?", id)
+  end
+  
   private
   
   def make_member
