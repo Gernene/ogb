@@ -35,6 +35,7 @@ class PostsController < ApplicationController
   end
   
   def search
+    @categories = Category.all
     @feed_items = Post.all
     if params[:search]
       @feed_items = Post.search(params[:search]).order("created_at DESC").paginate(page: params[:page])

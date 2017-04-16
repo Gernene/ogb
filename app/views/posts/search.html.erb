@@ -1,12 +1,18 @@
 <div class="col-md-10 col-md-offset-1">
     <h1>Find an Opportunity!</h1>
     <br>
+    <% if @categories.any? %>
+        <div class="center">
+            <%= render 'shared/category_buttons' %>
+            <br><br>
+        </div>
+    <% end %>
     <%= render 'shared/search_form' %>
     <br><br><br>
     <% if @feed_items.blank? %>
-        <h4 class="text-center">
+        <div class="text-center">
             There are no posts containing the term&#40;s&#41; &quot;<%= params[:search] %>&quot;.
-        </h4>
+        </div>
     <% else %>
         <%= render 'shared/feed' %>
     <% end %>

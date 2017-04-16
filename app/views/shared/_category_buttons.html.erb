@@ -1,0 +1,6 @@
+<% @categories.each do |category| %>
+    <%= form_tag(search_path, :method => "get", id: "searchForm", class: "inline") do %>
+        <%= hidden_field_tag :search, category.name, class: 'form-control' %>
+        <%= submit_tag category.name, :name => nil, class: category.color %>
+    <% end %>
+<% end %>

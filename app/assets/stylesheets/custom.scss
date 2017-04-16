@@ -4,19 +4,27 @@
 /* mixins, variables, etc. */
 $navy: rgba(15, 49, 69, 1);
 $navyHighlight: rgba(18, 58, 82, 1);
-$storm: rgba(86, 74, 89, 1);
-$stormHighlight: rgba(99, 85, 102, 1);
+
+$storm: rgba(116, 100, 120, 1);
+$stormHighlight: rgba(131, 112, 135, 1);
+
 $teal: rgba(124, 217, 180, 1);
 $tealHighlight: rgba(141, 247, 205, 1);
 $tealShadow: rgba(108, 189, 157, 1);
+
 $sunshine: rgba(235, 233, 182, 1);
 $sunshineHighlight: rgba(247, 245, 192, 1);
-$white: #fff;
+
 $tangerine: rgba(255, 161, 105, 1);
 $tangerineHighlight: rgba(255, 172, 105, 1);
+
 $chocolate: rgba(46, 29, 19, 1);
+$dandelion: rgba(240, 222, 123, 1);
+$punch: rgba(255, 94, 89, 1);
+$spring: rgba(181, 229, 118, 1);
 $fog: rgba(69, 68, 53, 1);
 $night: rgba(22, 19, 23, 1);
+$white: #fff;
 $gray-medium-light: #eaeaea;
 
 
@@ -293,6 +301,9 @@ p {
   margin-bottom: 3em;
 }
 
+.inline {
+  display: inline-block;
+}
 
 /* Buttons */
 .btn {
@@ -378,5 +389,152 @@ p {
   &:active {
     background: $stormHighlight;
     color: $night;
+  }
+}
+
+.btn-outline-primary {
+  font-weight: bold;
+  color: $teal;
+  background: $navy;
+  border: 3px solid $teal;
+  border-radius: 10px;
+  width: auto;
+  
+  &:hover {
+    color: $navy;
+    background: $teal;
+    border: 3px solid $teal;
+  }
+  
+  &:focus {
+    color: $navy !important;
+    background: $teal !important;
+    border: 3px solid $teal !important;
+  }
+}
+
+.btn-outline-secondary {
+  font-weight: bold;
+  color: $tangerine;
+  background: $navy;
+  border: 3px solid $tangerine;
+  border-radius: 10px;
+  width: auto;
+  
+  &:hover {
+    color: $navy;
+    background: $tangerine;
+    border: 3px solid $tangerine;
+  }
+  
+  &:focus {
+    color: $navy !important;
+    background: $tangerine !important;
+    border: 3px solid $tangerine !important;
+  }
+}
+
+.btn-outline-tertiary {
+  font-weight: bold;
+  color: $sunshine;
+  background: $navy;
+  border: 3px solid $sunshine;
+  border-radius: 10px;
+  width: auto;
+  
+  &:hover {
+    color: $navy;
+    background: $sunshine;
+    border: 3px solid $sunshine;
+  }
+  
+  &:focus {
+    color: $navy !important;
+    background: $sunshine !important;
+    border: 3px solid $sunshine !important;
+  }
+}
+
+.btn-outline-quaternary {
+  font-weight: bold;
+  color: $stormHighlight;
+  background: $navy;
+  border: 3px solid $stormHighlight;
+  border-radius: 10px;
+  width: auto;
+  
+  &:hover {
+    color: $navy;
+    background: $stormHighlight;
+    border: 3px solid $stormHighlight;
+  }
+  
+  &:focus {
+    color: $navy !important;
+    background: $stormHighlight !important;
+    border: 3px solid $stormHighlight !important;
+  }
+}
+
+.btn-outline-spring {
+  font-weight: bold;
+  color: $spring;
+  background: $navy;
+  border: 3px solid $spring;
+  border-radius: 10px;
+  width: auto;
+  
+  &:hover {
+    color: $navy;
+    background: $spring;
+    border: 3px solid $spring;
+  }
+  
+  &:focus {
+    color: $navy !important;
+    background: $spring !important;
+    border: 3px solid $spring !important;
+  }
+}
+
+.btn-outline-dandelion {
+  font-weight: bold;
+  color: $dandelion;
+  background: $navy;
+  border: 3px solid $dandelion;
+  border-radius: 10px;
+  width: auto;
+  
+  &:hover {
+    color: $navy;
+    background: $dandelion;
+    border: 3px solid $dandelion;
+  }
+  
+  &:focus {
+    color: $navy !important;
+    background: $dandelion !important;
+    border: 3px solid $dandelion !important;
+  }
+}
+
+.btn-outline-punch {
+  font-weight: bold;
+  color: $punch;
+  background: $navy;
+  border: 3px solid $punch;
+  border-radius: 10px;
+  width: auto;
+  
+  &:hover {
+    color: $navy;
+    background: $punch;
+    border: 3px solid $punch;
+  }
+  
+  &:focus {
+    color: $navy !important;
+    background: $punch !important;
+    border: 3px solid $punch !important;
   }
 }
