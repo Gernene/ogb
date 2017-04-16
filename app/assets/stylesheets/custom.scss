@@ -193,10 +193,11 @@ textarea {
     margin: 0;
     height: 280px;
     height: 16em;
-    background: url(image_path('OGBFlatirons.png')) #42CBD1;
-    background-size: 50em auto;
+    background-image: url(image_path('OGBHillL.png')), url(image_path('OGBFlatirons.png')), url(image_path('OGBHillR.png'));
+    background-color: #42CBD1;
+    background-size: auto 60px, 50em auto, auto 50px;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    background-position: left bottom, center bottom, right bottom;
     
     #title {
       height: inherit;
@@ -280,6 +281,10 @@ nav {
     .custom-navbar .navbar-collapse {
         clear: both;
         float: none;
+    }
+    .navbar-header {
+      height: 35px; 
+      width: 35px;
     }
 }
 
