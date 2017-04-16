@@ -13,7 +13,11 @@
     <% if logged_in? %>
       <%= render 'layouts/navigation' %>
     <% end %>
-    <div id="banner"></div>
+    <div id="banner">
+      <div id="branchL"></div>
+      <div id="title"></div>
+      <div id="branchR" class="pull-right"></div>
+    </div>
     <div class="container content">
       <div class="col-centered">
         <%= yield %>
