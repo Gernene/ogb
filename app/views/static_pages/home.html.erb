@@ -64,11 +64,18 @@
     </div>
   <% end %>
 <% else %>
-  <h1>Welcome!</h1>
-  <%= link_to "Sign Up!", signup_path, class: "btn btn-lg btn-secondary" %>
-  <%= link_to "Log in", login_path, class: "btn btn-lg btn-primary" %>
-  <%= link_to "Search", search_path, class: "btn btn-lg btn-primary" %>
-
-  <%= link_to image_tag("rails.png", alt: "Rails logo"),
-              'http://rubyonrails.org/' %>
+  <div class="col-md-10 col-md-offset-1 center">
+    <h1>Welcome!</h1>
+    <br>
+    <div>
+      The future home of something crazy?
+    </div>
+    <br>
+    <div>
+      <%= image_tag("OGBPentagon.png", alt: "OGB Logo") %>
+    </div>
+    <br>
+    <%= link_to "Sign Up!", signup_path, class: "btn btn-lg btn-secondary" %>
+    <%= link_to "Log In", login_path, class: "btn btn-lg btn-primary" %>
+  </div>
 <% end %>
