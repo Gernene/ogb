@@ -19,9 +19,4 @@ class UserMailer < ApplicationMailer
     @request = request
     mail to: @request.user.email, subject: "Request Declined"
   end
-  
-  def post_cancelled(request)
-    @request = request
-    mail to: @request.user.email, subject: "Opportunity Closed"
-  end
 end

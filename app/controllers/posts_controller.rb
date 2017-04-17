@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to root_url
+      redirect_to @post
     else
       @feed_items = []
       render 'static_pages/home'
@@ -29,11 +29,10 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.feed.where("status != ?", "accepted").user.send_post_cancel_email(@post.feed)
     @post.requests.destroy
     @post.destroy
     flash[:success] = "Post deleted"
-    redirect_to request.referrer || root_url
+    redirect_to(myposts_path)
   end
   
   def search
@@ -53,7 +52,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:description, :title)
+      params.require(:post).permit(:description, :title, :scheduling, :location)
     end
     
     def authenticate_post_author

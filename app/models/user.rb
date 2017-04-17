@@ -79,11 +79,6 @@ class User < ApplicationRecord
     UserMailer.request_decline(request).deliver_now
   end
   
-  # Sends post canceled email.
-  def send_post_canceled_email(request)
-    UserMailer.post_cancel(request).deliver_now
-  end
-  
   def feed
     Post.where("user_id = ?", id)
   end
