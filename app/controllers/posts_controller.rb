@@ -29,6 +29,8 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
+    @post.feed.where("status != ?", "accepted").user.send_post_cancel_email(@post.feed)
+    @post.requests.destroy
     @post.destroy
     flash[:success] = "Post deleted"
     redirect_to request.referrer || root_url

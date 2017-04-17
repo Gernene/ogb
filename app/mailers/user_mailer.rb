@@ -12,13 +12,16 @@ class UserMailer < ApplicationMailer
   
   def request_accept(request)
     @request = request
+    mail to: @request.user.email, subject: "Request Accepted"
   end
   
   def request_decline(request)
     @request = request
+    mail to: @request.user.email, subject: "Request Declined"
   end
   
   def post_cancelled(request)
     @request = request
+    mail to: @request.user.email, subject: "Opportunity Closed"
   end
 end

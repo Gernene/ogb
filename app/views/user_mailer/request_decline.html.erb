@@ -1,0 +1,9 @@
+<h1>Request Declined</h1>
+
+<p>Hi <%= @request.user.name %>,</p>
+
+<p>
+One of your requests was declined.
+</p>
+
+<%= link_to "Check your pending requests here.", mycommitments_path %>

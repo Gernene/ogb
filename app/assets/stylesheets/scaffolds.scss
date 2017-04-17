@@ -1,8 +1,27 @@
-$midnightBlue: rgba(20, 46, 68, 1);;
-$midnightBlueHighlight: #20405b;
-$skyBlue: #8abbca;
-$brightBlue: #74c5fc;
-$softYellow: #ffe69b;
+/* mixins, variables, etc. */
+$navy: rgba(15, 49, 69, 1);
+$navyHighlight: rgba(18, 58, 82, 1);
+
+$storm: rgba(116, 100, 120, 1);
+$stormHighlight: rgba(131, 112, 135, 1);
+
+$teal: rgba(124, 217, 180, 1);
+$tealHighlight: rgba(141, 247, 205, 1);
+$tealShadow: rgba(108, 189, 157, 1);
+
+$sunshine: rgba(235, 233, 182, 1);
+$sunshineHighlight: rgba(247, 245, 192, 1);
+
+$tangerine: rgba(255, 161, 105, 1);
+$tangerineHighlight: rgba(255, 172, 105, 1);
+
+$chocolate: rgba(46, 29, 19, 1);
+$dandelion: rgba(240, 222, 123, 1);
+$punch: rgba(255, 122, 105, 1);
+$spring: rgba(181, 229, 118, 1);
+$fog: rgba(69, 68, 53, 1);
+$night: rgba(22, 19, 23, 1);
+$white: #fff;
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -17,10 +36,10 @@ pre {
 }
 
 a {
-    color: $brightBlue;
+    color: $teal;
 
   &:hover {
-    color: $skyBlue;
+    color: $tealHighlight;
     text-decoration: none;
     background: none;
   }
@@ -38,17 +57,12 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
-  display: table;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
 
   h2 {
     text-align: left;

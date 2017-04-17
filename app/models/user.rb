@@ -69,6 +69,21 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
   
+  # Sends request accept email.
+  def send_request_accept_email(request)
+    UserMailer.request_accept(request).deliver_now
+  end
+  
+  # Sends request decline email.
+  def send_request_decline_email(request)
+    UserMailer.request_decline(request).deliver_now
+  end
+  
+  # Sends post canceled email.
+  def send_post_canceled_email(request)
+    UserMailer.post_cancel(request).deliver_now
+  end
+  
   def feed
     Post.where("user_id = ?", id)
   end

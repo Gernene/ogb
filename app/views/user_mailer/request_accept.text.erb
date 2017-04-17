@@ -1,0 +1,13 @@
+Hi <%= @request.user.name %>,
+
+One of your requests has been accepted! Below are the details for your upcoming event.
+
+Organization: <%= @request.post.user.name %>
+Phone: <%= @request.post.user.phone %>
+Email: <%= @request.post.user.email %>
+Website: <%= @request.post.user.website %>
+
+Event: <%= @request.post.title %>
+Description: <%= @request.post.description %>
+Date(s) / Scheduling: <%= @request.post.event_date %>
+Location: location tag
