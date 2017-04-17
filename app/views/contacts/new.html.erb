@@ -1,0 +1,21 @@
+<div class="col-md-6 col-md-offset-3">
+  <h1>Contact Us</h1>
+
+  <%= form_for(@contact) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+        
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+        
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control' %>
+    
+        <%= f.label :message %>
+        <%= f.text_area :message, placeholder: "Your message..." %>
+      </div>
+      <%= f.submit "Send", class: "btn btn-primary" %>
+  <% end %>
+</div>

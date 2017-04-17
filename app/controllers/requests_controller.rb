@@ -24,7 +24,7 @@ class RequestsController < ApplicationController
         redirect_to root_url
       end
     else
-        flash[:error] = "You have already requested to help."
+        flash.now[:error] = "You have already requested to help."
     end
   end
 

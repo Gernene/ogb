@@ -19,4 +19,12 @@ class UserMailer < ApplicationMailer
     @request = request
     mail to: @request.user.email, subject: "Request Declined"
   end
+  
+  def contact_email(name, email, title, message)
+    @name = name
+    @email = email
+    @title = title
+    @message = message
+    mail subject: @title
+  end
 end
