@@ -15,12 +15,16 @@ class RequestsController < ApplicationController
   end
   
   def create
-    @request = current_user.requests.build(request_params)
-    if @request.save
-      flash[:success] = "request created!"
-      redirect_to @request.post
+    if current_user.requests.find_by(post_id: params[:id]).nil?
+      @request = current_user.requests.build(request_params)
+      if @request.save
+        flash[:success] = "request created!"
+        redirect_to @request.post
+      else
+        redirect_to root_url
+      end
     else
-      redirect_to root_url
+        flash[:error] = "You have already requested to help."
     end
   end
 
