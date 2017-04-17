@@ -25,12 +25,16 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    if current_user.requests.find_by(id: params[:id]).nil?
+      @request.user.send_request_decline_email(@request)
+    end
     @request.destroy
     flash[:success] = "request deleted"
     redirect_to request.referrer || root_url
   end
   
   def update
+    @request.user.send_request_accept_email(@request)
     @request = Request.find(params[:id])
     @request.status = "accepted"
     @request.save

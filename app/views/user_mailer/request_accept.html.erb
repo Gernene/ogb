@@ -1,0 +1,14 @@
+<h1>Request Accepted</h1>
+
+<p>Hi <%= @request.user.name %>,</p>
+
+<p>
+One of your requests has been accepted! Below are the details for your upcoming event.
+</p>
+<div>
+    Organization: <%= link_to @request.post.user.name, @request.post.user %><br><br>
+    Event: <%= @request.post.title %><br><br>
+    Description: <%= @request.post.description %><br><br>
+    Date(s) / Scheduling: <%= @request.post.event_date %><br><br>
+    Location: location tag
+</div>

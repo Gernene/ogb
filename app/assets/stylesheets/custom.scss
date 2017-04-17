@@ -25,7 +25,6 @@ $spring: rgba(181, 229, 118, 1);
 $fog: rgba(69, 68, 53, 1);
 $night: rgba(22, 19, 23, 1);
 $white: #fff;
-$gray-medium-light: #eaeaea;
 
 
 
@@ -98,7 +97,7 @@ footer {
   margin-top: 45px;
   padding: 1em;
   border-top: 1px solid $navyHighlight;
-  color: #96B5FF;
+  color: #42CBD1;
   a {
     color: $teal;
     &:hover {
@@ -175,9 +174,9 @@ textarea {
 }
 
 #error_explanation {
-  color: red;
+  color: $punch;
   ul {
-    color: red;
+    color: $punch;
     margin: 0 0 30px 0;
   }
 }
@@ -186,6 +185,7 @@ textarea {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
+    box-shadow: 0 0 8px $punch;
   }
 }
 
@@ -195,38 +195,16 @@ textarea {
     height: 16em;
     background-image: url(image_path('OGBHillL.png')), url(image_path('OGBFlatirons.png')), url(image_path('OGBHillR.png'));
     background-color: #42CBD1;
-    background-size: auto 60px, 50em auto, auto 50px;
+    background-size: auto 25%, auto 90%, auto 15%;
     background-repeat: no-repeat;
     background-position: left bottom, center bottom, right bottom;
     
-    #title {
+    #innerBanner {
       height: inherit;
-      width: 40%;
-      display: inline-block;
-      background: url(image_path('OGBTitle.png'));
-      background-size: 100% auto;
+      background-image: url(image_path('OGBTitle.png')), url(image_path('OGBBranchL.gif')), url(image_path('OGBBranchR.gif'));
+      background-size: auto 90%, auto 95%, auto 80%;
       background-repeat: no-repeat;
-      background-position: center;
-    }
-    
-    #branchL {
-      height: inherit;
-      width: 30%;
-      display: inline-block;
-      background: url(image_path('OGBBranchL.gif'));
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      background-position: left;
-    }
-    
-    #branchR {
-      height: inherit;
-      width: 25%;
-      display: inline-block;
-      background: url(image_path('OGBBranchR.gif'));
-      background-size: 100% auto;
-      background-repeat: no-repeat;
-      background-position: right;
+      background-position: center, left, right;
     }
 }
 

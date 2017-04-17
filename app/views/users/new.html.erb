@@ -14,7 +14,8 @@
       <%= f.email_field :email, class: 'form-control' %>
       
       <%= f.label :account_type %><br>
-      <%= f.label :account_type, "Volunteer", :value => "volunteer"  %>
+      <div class="inline"></div>
+      <%= f.label :account_type, "Volunteer", :value => "volunteer" %>
       <%= f.radio_button :account_type, "volunteer", :checked => true %>
       <%= f.label :account_type, "Organization", :value => "organization" %>
       <%= f.radio_button :account_type, "organization" %>
