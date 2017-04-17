@@ -35,10 +35,14 @@
     <%= render 'shared/request_feed' %>
   <% else %>
     <br><br>
-    <h2 class="teal caveatBrush">I'd Like to Help!</h2>
-    Submit to send this organization your application and contact details. 
-    You will receive a notification by email once your help has been accepted!
-    <br><br> 
-    <%= render 'shared/request_form' %>
+    <% if Request.find_by("post_id == ? AND user_id == ?", params[:id], current_user.id).nil? %>
+      <h2 class="teal caveatBrush">I'd Like to Help!</h2>
+      Submit to send this organization your application and contact details. 
+      You will receive a notification by email once your help has been accepted!
+      <br><br> 
+      <%= render 'shared/request_form' %>
+    <% else %>
+      <h2 class="teal caveatBrush">Thanks for applying!</h2>
+    <% end %>
   <% end %>
 </div>
