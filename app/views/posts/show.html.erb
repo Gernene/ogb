@@ -11,10 +11,10 @@
       <h3 class="tangerine caveatBrush"><%= @post.title %></h3>
       <h5 class="teal"><b>Description:</b></h5>
       <%= @post.description %><br><br>
-      <h5 class="teal"><b>Event Date(s) / Scheduling:</b></h5>
-      Dummy text dummy text dummy text<br><br>
+      <h5 class="teal"><b>Event Scheduling:</b></h5>
+      <%= @post.scheduling %><br><br>
       <h5 class="teal"><b>Location:</b></h5>
-      Dummy text dummy text dummy text<br><br>
+      <%= @post.location %><br><br>
       <h5 class="teal"><b>Volunteers:</b></h5>
       <% @acceptedrequests.each do |request| %>
         <%= link_to request.user.name, request.user %><br>

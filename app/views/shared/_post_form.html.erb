@@ -5,7 +5,13 @@
     <%= f.text_field :title, class: 'form-control' %>
     
     <%= f.label :description %>
-    <%= f.text_area :description, placeholder: "Compose new post..." %>
+    <%= f.text_area :description, placeholder: "Extra event details, requirements, etc." %>
+    
+    <%= f.label :scheduling %>
+    <%= f.text_field :scheduling, class: 'form-control' %>
+    
+    <%= f.label :location %>
+    <%= f.text_field :location, class: 'form-control' %>
   </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
