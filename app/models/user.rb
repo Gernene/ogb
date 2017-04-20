@@ -69,6 +69,11 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
   
+  # Sends request send email.
+  def send_request_send_email(request)
+    UserMailer.request_send(request).deliver_now
+  end
+  
   # Sends request accept email.
   def send_request_accept_email(request)
     UserMailer.request_accept(request).deliver_now
