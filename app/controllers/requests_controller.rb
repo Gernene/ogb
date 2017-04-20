@@ -18,7 +18,8 @@ class RequestsController < ApplicationController
     if current_user.requests.find_by(post_id: params[:id]).nil?
       @request = current_user.requests.build(request_params)
       if @request.save
-        flash[:success] = "request created!"
+        @request.user.send_request_send_email(@request)
+        flash[:success] = "Request created"
         redirect_to @request.post
       else
         redirect_to root_url

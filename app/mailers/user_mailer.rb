@@ -10,6 +10,11 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Password reset"
   end
   
+  def request_send(request)
+    @request = request
+    mail to: @request.post.user.email, subject: "Pending Request"
+  end
+  
   def request_accept(request)
     @request = request
     mail to: @request.user.email, subject: "Request Accepted"

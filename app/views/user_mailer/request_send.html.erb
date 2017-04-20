@@ -1,0 +1,12 @@
+<h1>Request Pending</h1>
+
+<p>Hi <%= @request.post.user.name %>,</p>
+
+<p>
+A volunteer has made a request to participate in one of your opportunities:
+</p>
+<div>
+    <%= link_to "Manage reqquests for this post.", @request.post %>
+    <br>
+    <%= link_to "Manage all your posts.", myposts_path %>
+</div>
