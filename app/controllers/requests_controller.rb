@@ -33,7 +33,7 @@ class RequestsController < ApplicationController
       @request.user.send_request_decline_email(@request)
     end
     @request.destroy
-    flash[:success] = "request deleted"
+    flash[:success] = "Request deleted"
     redirect_to request.referrer || root_url
   end
   
@@ -42,7 +42,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @request.status = "accepted"
     @request.save
-    flash[:success] = "request accepted"
+    flash[:success] = "Request accepted"
     redirect_to request.referrer || root_url
   end
   
