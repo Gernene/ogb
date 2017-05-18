@@ -5,7 +5,7 @@
     <%= link_to post.user.name, post.user %>
   </div>
   <div class="col-md-10">
-    <h3 class="tangerine caveatBrush"><%= post.title %></h3>
+    <h3 class="tangerine quicksand"><%= post.title %></h3>
     <span class="content"><%= post.description.truncate_words(20) %></span>
     <br><br>
     <i>- Posted <%= time_ago_in_words(post.created_at) %> ago</i>
