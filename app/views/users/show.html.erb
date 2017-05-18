@@ -7,7 +7,7 @@
     <div class="col-md-4">
       <%= gravatar_for @user %>
       <br><br><br>
-      <h3 class="tangerine caveatBrush"><%= @user.name %></h3>
+      <h3 class="tangerine quicksand"><%= @user.name %></h3>
       <% if @user.user_group.name == "Member" %>
         <span class="teal"><%= @user.account_type.titleize %></span>
       <% else %>

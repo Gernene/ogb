@@ -9,7 +9,7 @@
       Phone: <%= @post.user.phone %>
     </div>
     <div>
-      <h3 class="tangerine caveatBrush"><%= @post.title %></h3>
+      <h3 class="tangerine quicksand"><%= @post.title %></h3>
       <h5 class="teal"><b>Description:</b></h5>
       <%= @post.description %><br><br>
       <h5 class="teal"><b>Event Scheduling:</b></h5>
@@ -37,13 +37,13 @@
   <% else %>
     <br><br>
     <% if Request.find_by("post_id == ? AND user_id == ?", params[:id], current_user.id).nil? %>
-      <h2 class="teal caveatBrush">I'd Like to Help!</h2>
+      <h2 class="teal quicksand">I'd Like to Help!</h2>
       Submit to send this organization your application and contact details. 
       You will receive a notification by email once your help has been accepted!
       <br><br> 
       <%= render 'shared/request_form' %>
     <% else %>
-      <h2 class="teal caveatBrush">Thanks for applying!</h2>
+      <h2 class="teal quicksand">Thanks for applying!</h2>
     <% end %>
   <% end %>
 </div>
