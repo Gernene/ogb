@@ -239,6 +239,10 @@ nav {
 }
 
 @media (max-width:767px) { 
+    #innerBanner {
+      background-image: url(image_path('OGBTitle.png')) !important;
+    }
+  
     .custom-navbar .navbar-right {
         float: right;
         padding-right: 15px;
